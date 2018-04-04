@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+        *** GENERATED FROM jax-ws.xml - DO NOT EDIT !                             ***
+        *** TO MODIFY wsimport options USE Web Service node -> Edit WS Attributes ***
+        *** TO CHANGE TARGETS GENERATED TO jaxws-build.xml COPY THOSE             ***
+        *** TARGETS TO ../build.xml AND MODIFY THAT FILE INSTEAD                  ***
+
+        --><project xmlns:xalan="http://xml.apache.org/xslt" xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3" xmlns:jaxws="http://www.netbeans.org/ns/jax-ws/1">
+    <!--
+                ===================
+                JAX-WS WSIMPORT SECTION
+                ===================
+            -->
+    <target name="wsimport-init" depends="init">
+        <mkdir dir="${build.generated.sources.dir}/jax-ws"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${libs.jaxws21.classpath}"/>
+        </taskdef>
+    </target>
+    <target name="wsimport-client-ServiciosBasicos" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/ServiciosBasicos"/>
+        <property name="wsdl-ServiciosBasicos" location="xml-resources/web-service-references/ServiciosBasicos/wsdl/localhost_8080/AgendaSoap/ServiciosBasicos.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/ServiciosBasicos" destdir="${build.generated.dir}/jax-wsCache/ServiciosBasicos" wsdl="${wsdl-ServiciosBasicos}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/AgendaSoap/ServiciosBasicos?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-ServiciosBasicos}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/ServiciosBasicos"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/ServiciosBasicos">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-ServiciosBasicos" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/ServiciosBasicos"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/servlet"/>
+    </target>
+    <target name="wsimport-client-ValidarXSD_DTD" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/ValidarXSD_DTD"/>
+        <property name="wsdl-ValidarXSD_DTD" location="xml-resources/web-service-references/ValidarXSD_DTD/wsdl/localhost_8080/AgendaSoap/ValidarXSD_DTD.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/ValidarXSD_DTD" destdir="${build.generated.dir}/jax-wsCache/ValidarXSD_DTD" wsdl="${wsdl-ValidarXSD_DTD}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/AgendaSoap/ValidarXSD_DTD?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-ValidarXSD_DTD}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/ValidarXSD_DTD"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/ValidarXSD_DTD">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-ValidarXSD_DTD" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/ValidarXSD_DTD"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/servlet"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-ServiciosBasicos, wsimport-client-ValidarXSD_DTD"/>
+</project>
