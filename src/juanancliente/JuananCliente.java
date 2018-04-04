@@ -78,9 +78,18 @@ public class JuananCliente {
 
                         break;
                     case 4:
-                       
-                        servlet.Persona ag2 = service2.getServiciosBasicosPort().mostarPersona("Juan");
-                        System.out.println(ag2.getEmail());
+                       //if no existe null
+                         Scanner sc1 = new Scanner(System.in);
+                         String name1 = "";
+                          System.out.print("Ingrese el nombre a buscar: ");
+                         name1 = sc1.nextLine();
+                         
+                        servlet.Persona ag2 = service2.getServiciosBasicosPort().mostarPersona(name1);
+                         
+                        System.out.println("Name:" + ag2.getName());
+                        System.out.println("Email:" + ag2.getEmail());
+                        System.out.println("Telephone:" + ag2.getTelephone());
+                        
                         break;
 
                     case 5:
