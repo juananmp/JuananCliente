@@ -85,10 +85,13 @@ public class JuananCliente {
                          name1 = sc1.nextLine();
                          
                         servlet.Persona ag2 = service2.getServiciosBasicosPort().mostarPersona(name1);
-                         
+                        if(ag2!=null){
                         System.out.println("Name:" + ag2.getName());
                         System.out.println("Email:" + ag2.getEmail());
                         System.out.println("Telephone:" + ag2.getTelephone());
+                        }else{
+                            System.out.println("El usuario: " + name1 + " " + "no se encuentra en la agenda");
+                        }
                         
                         break;
 
